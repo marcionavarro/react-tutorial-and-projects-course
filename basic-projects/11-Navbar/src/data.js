@@ -20,12 +20,12 @@ export const links = [
     id: 4,
     url: '/contact',
     text: 'contact'
-  },
-  {
+  }
+  /* {
     id: 5,
     url: '/profile',
     text: 'profile'
-  }
+  } */
 ];
 
 export const social = [
