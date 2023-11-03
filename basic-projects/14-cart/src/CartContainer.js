@@ -9,7 +9,7 @@ const CartContainer = () => {
       <section className='cart'>
         {/* cart header */}
         <header>
-          <h2>SUA BOLSA</h2>
+          <h2>Seu Carrinho</h2>
           <h4 className='empty-cart'>está atualmente vazio</h4>
         </header>
       </section>
@@ -19,7 +19,7 @@ const CartContainer = () => {
     <section className='cart'>
       {/* cart header */}
       <header>
-        <h2>SUA BOLSA</h2>
+        <h2>Seu Carrinho</h2>
       </header>
       {/* cart items */}
       <div>
@@ -36,7 +36,7 @@ const CartContainer = () => {
           </h4>
         </div>
         <button className='btn clear-btn' onClick={clearCart}>
-          Limpar bolsa
+          Limpar Carrinho
         </button>
       </footer>
     </section>
