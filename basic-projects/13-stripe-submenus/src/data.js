@@ -2,29 +2,29 @@ import { FaCreditCard, FaBook, FaBriefcase } from 'react-icons/fa';
 import React from 'react';
 const sublinks = [
   {
-    page: 'products',
+    page: 'produtos',
     links: [
-      { label: 'payment', icon: <FaCreditCard />, url: '/products' },
+      { label: 'pagamento', icon: <FaCreditCard />, url: '/products' },
       { label: 'terminal', icon: <FaCreditCard />, url: '/products' },
-      { label: 'connect', icon: <FaCreditCard />, url: '/products' },
-    ],
+      { label: 'conectar', icon: <FaCreditCard />, url: '/products' }
+    ]
   },
   {
-    page: 'developers',
+    page: 'desenvolvedores',
     links: [
       { label: 'plugins', icon: <FaBook />, url: '/products' },
-      { label: 'libraries', icon: <FaBook />, url: '/products' },
-      { label: 'help', icon: <FaBook />, url: '/products' },
-      { label: 'billing', icon: <FaBook />, url: '/products' },
-    ],
+      { label: 'bibliotecas', icon: <FaBook />, url: '/products' },
+      { label: 'ajuda', icon: <FaBook />, url: '/products' },
+      { label: 'cobrança', icon: <FaBook />, url: '/products' }
+    ]
   },
   {
-    page: 'company',
+    page: 'empresa',
     links: [
-      { label: 'about', icon: <FaBriefcase />, url: '/products' },
-      { label: 'customers', icon: <FaBriefcase />, url: '/products' },
-    ],
-  },
+      { label: 'sobre', icon: <FaBriefcase />, url: '/products' },
+      { label: 'clientes', icon: <FaBriefcase />, url: '/products' }
+    ]
+  }
 ];
 
 export default sublinks;
