@@ -5,17 +5,53 @@ import {
   FaCalendarTimes,
   FaMap,
   FaPhone,
-  FaLock,
-  FaMailchimp,
-  FaMailBulk
+  FaLock
 } from "react-icons/fa";
 const url = "https://randomuser.me/api/";
 const defaultImage = "https://randomuser.me/api/portraits/men/75.jpg";
 function App() {
   const [loading, setLoading] = useState(false);
   const [person, setPerson] = useState(null);
-  const [title, setTitle] = useState("name");
+  const [title, setTitle] = useState("nome");
   const [value, setValue] = useState("pessoa aleatória");
+
+  const getPerson = async () => {
+    const response = await fetch(url);
+    const data = await response.json();
+    const person = data.results[0];
+
+    const { phone, email } = person;
+    const { large: image } = person.picture;
+    const {
+      login: { password }
+    } = person;
+    const { first, last } = person.name;
+    const {
+      dob: { age }
+    } = person;
+    const {
+      street: { number, name }
+    } = person.location;
+
+    const newPerson = {
+      image,
+      phone,
+      email,
+      password,
+      age,
+      street: `${number} ${name}`,
+      name: `${first} ${last}`
+    };
+
+    setPerson(newPerson);
+    setLoading(false);
+    setTitle('nome');
+    setValue(newPerson.name)
+  };
+
+  useEffect(() => {
+    getPerson();
+  }, []);
 
   const handleValue = (e) => {
     console.log(e.target);
@@ -31,7 +67,7 @@ function App() {
             alt="random user"
             className="user-img"
           />
-          <p className="user-title">meu nome {title} é </p>
+          <p className="user-title">meu {title} é </p>
           <p className="user-value">{value}</p>
           <div className="values-list">
             <button
@@ -46,13 +82,9 @@ function App() {
               data-label="email"
               onMouseOver={handleValue}
             >
-              <FaEnvelopeOpen/>
+              <FaEnvelopeOpen />
             </button>
-            <button
-              className="icon"
-              data-label="age"
-              onMouseOver={handleValue}
-            >
+            <button className="icon" data-label="age" onMouseOver={handleValue}>
               <FaCalendarTimes />
             </button>
             <button
@@ -77,8 +109,8 @@ function App() {
               <FaLock />
             </button>
           </div>
-          <button className="btn" type="button">
-            {loading ? 'loading...' : 'pessoa aleatória'}
+          <button className="btn" type="button" onClick={getPerson}>
+            {loading ? "loading..." : "pessoa aleatória"}
           </button>
         </div>
       </div>
