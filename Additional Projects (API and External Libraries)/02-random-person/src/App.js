@@ -45,8 +45,8 @@ function App() {
 
     setPerson(newPerson);
     setLoading(false);
-    setTitle('nome');
-    setValue(newPerson.name)
+    setTitle("nome");
+    setValue(newPerson.name);
   };
 
   useEffect(() => {
@@ -54,9 +54,14 @@ function App() {
   }, []);
 
   const handleValue = (e) => {
-    console.log(e.target);
+    if (e.target.classList.contains("icon")) {
+      const newValue = e.target.dataset.label;
+      setTitle(newValue);
+      setValue(person[newValue]);
+    }
   };
 
+  console.log(title);
   return (
     <main>
       <div className="block bcg-black"></div>
