@@ -21,7 +21,7 @@ const ChartComponent = ({data}) => {
         xAxisName: "Country",
         yAxisName: "Reserves (MMbbl)",
         numberSuffix: "K",
-        theme: "gammel"
+        theme: "fusion"
       },
       data
     }
