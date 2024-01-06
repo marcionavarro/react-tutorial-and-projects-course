@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { GithubContext } from "../context/context";
 import styled from "styled-components";
-import { GoRepo, GoGist } from "react-icons/go";
+import { GoRepo, GoGist, GoGitPullRequest, GoCode } from "react-icons/go";
 import { FiUsers, FiUserPlus } from "react-icons/fi";
 
 const UserInfo = () => {
@@ -32,7 +32,7 @@ const UserInfo = () => {
     },
     {
       id: 4,
-      icon: <GoGist className="icon" />,
+      icon: <GoCode className="icon" />,
       label: "gists",
       value: public_gists,
       color: "yellow"
