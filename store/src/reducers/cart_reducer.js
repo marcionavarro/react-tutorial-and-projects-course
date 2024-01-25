@@ -80,7 +80,6 @@ const cart_reducer = (state, action) => {
         const { amount, price } = cartItem;
         total.total_items += amount;
         total.total_amount += price * amount;
-        console.log(amount, price);
         return total;
       },
       {
